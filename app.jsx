@@ -779,7 +779,7 @@ function App() {
           <a className="sidebar-logo" href="#about" onClick={e => { e.preventDefault(); navigate('about'); }}>
             <div className="logo-mark">VP</div>
             <div className="logo-text">
-              Void Pixel<span>Studio</span>
+              Valkaya<span>Studio</span>
             </div>
           </a>
           {/* Desktop collapse toggle */}
