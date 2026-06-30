@@ -579,8 +579,8 @@ function GamesPage() {
       <p className="eyebrow">Our portfolio</p>
       <h1 className="page-title">Our <em>games</em></h1>
       <p className="page-subtitle">
-        From frantic racers to cosmic strategy — every title is built to be played in short sessions
-        and remembered for long ones.
+        Our first racing game is built to be played in short sessions 
+        and remembered for long ones — with more titles on the way.
       </p>
 
       <div className="games-grid">
