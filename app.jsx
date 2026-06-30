@@ -651,7 +651,7 @@ function ContactPage() {
       <div className="contact-layout">
         <div className="contact-info">
           {[
-            { icon: icons.contact, label: "General enquiries", value: <a href="mailto:dev@indvalkayastudios.com">hello@voidpixel.studio</a> },
+            { icon: icons.contact, label: "General enquiries", value: <a href="mailto:dev@indvalkayastudios.com">dev@indvalkayastudios.com</a> },
             // { icon: icons.shield, label: "Business & partnerships", value: <a href="mailto:biz@voidpixel.studio">biz@voidpixel.studio</a> },
             // { icon: icons.star, label: "Press & media", value: <a href="mailto:press@voidpixel.studio">press@voidpixel.studio</a> },
             { icon: icons.zap, label: "Response time", value: "Typically within 2 business days" },
@@ -819,7 +819,7 @@ function App() {
         </nav>
 
         <div className="sidebar-footer">
-          © {new Date().getFullYear()} Void Pixel Studio
+          © {new Date().getFullYear()} Valkaya Studio
         </div>
       </aside>
 
