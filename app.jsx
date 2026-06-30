@@ -496,7 +496,7 @@ if (!document.getElementById('app-styles')) {
 const GAMES = [
   {
     id: 1,
-    name: "APEX DRIFT",
+    name: "Rush to Race",
     genre: "Racing",
     rating: "PEGI 3+",
     status: "live",
@@ -504,30 +504,6 @@ const GAMES = [
     gradient: "linear-gradient(135deg, #1a0533 0%, #2d1052 50%, #0d1a3d 100%)",
     iconColor: "#A78BFA",
     store: "#",
-    trailer: "#",
-  },
-  {
-    id: 2,
-    name: "VOID RUNNER",
-    genre: "Endless Runner",
-    rating: "PEGI 3+",
-    status: "live",
-    desc: "Sprint through an endless procedural void. Dodge obstacles, collect relics, and survive as long as you can.",
-    gradient: "linear-gradient(135deg, #0d2733 0%, #0a3d2e 100%)",
-    iconColor: "#6EE7B7",
-    store: "#",
-    trailer: "#",
-  },
-  {
-    id: 3,
-    name: "STELLAR SIEGE",
-    genre: "Strategy",
-    rating: "PEGI 7+",
-    status: "coming",
-    desc: "Command fleets across the galaxy. Build alliances, research tech, and outmaneuver rival commanders in real-time battles.",
-    gradient: "linear-gradient(135deg, #1a1a0d 0%, #2d2a0d 100%)",
-    iconColor: "#FCD34D",
-    store: null,
     trailer: "#",
   },
 ];
@@ -541,13 +517,13 @@ function AboutPage() {
       <p className="eyebrow">Who we are</p>
       <h1 className="page-title">We build games<br /><em>players remember</em></h1>
       <p className="page-subtitle">
-        Void Pixel Studio is an independent mobile game developer focused on tight mechanics,
+        Valkaya Studio is an independent mobile game developer focused on tight mechanics,
         deep progression, and worlds worth exploring. We're a small team with a big appetite.
       </p>
 
       <div className="about-hero">
         <p style={{ fontSize: 16, color: 'var(--text)', lineHeight: 1.8, maxWidth: 560 }}>
-          Founded in 2021, we set out to prove that mobile games don't have to feel disposable.
+          Founded in 2026, we set out to prove that mobile games don't have to feel disposable.
           Every title we ship is built around one question: <strong style={{ color: 'var(--lavender)' }}>
           "Is this worth picking up at 11pm?"</strong> If the answer isn't a clear yes, we go back to the drawing board.
         </p>
@@ -559,10 +535,10 @@ function AboutPage() {
 
       <div className="about-grid">
         {[
-          { num: "3", label: "Games shipped" },
-          { num: "2M+", label: "Players worldwide" },
-          { num: "4.7★", label: "Average store rating" },
-          { num: "2021", label: "Founded" },
+          { num: "1", label: "Games shipped" },
+          // { num: "2M+", label: "Players worldwide" },
+          // { num: "4.7★", label: "Average store rating" },
+          { num: "2026", label: "Founded" },
         ].map(s => (
           <div className="stat-card" key={s.label}>
             <div className="stat-num">{s.num}</div>
@@ -675,9 +651,9 @@ function ContactPage() {
       <div className="contact-layout">
         <div className="contact-info">
           {[
-            { icon: icons.contact, label: "General enquiries", value: <a href="mailto:hello@voidpixel.studio">hello@voidpixel.studio</a> },
-            { icon: icons.shield, label: "Business & partnerships", value: <a href="mailto:biz@voidpixel.studio">biz@voidpixel.studio</a> },
-            { icon: icons.star, label: "Press & media", value: <a href="mailto:press@voidpixel.studio">press@voidpixel.studio</a> },
+            { icon: icons.contact, label: "General enquiries", value: <a href="mailto:dev@indvalkayastudios.com">hello@voidpixel.studio</a> },
+            // { icon: icons.shield, label: "Business & partnerships", value: <a href="mailto:biz@voidpixel.studio">biz@voidpixel.studio</a> },
+            // { icon: icons.star, label: "Press & media", value: <a href="mailto:press@voidpixel.studio">press@voidpixel.studio</a> },
             { icon: icons.zap, label: "Response time", value: "Typically within 2 business days" },
           ].map(c => (
             <div className="contact-card" key={c.label}>
