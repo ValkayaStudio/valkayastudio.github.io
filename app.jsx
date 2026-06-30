@@ -500,11 +500,11 @@ const GAMES = [
     genre: "Racing",
     rating: "PEGI 3+",
     status: "live",
-    desc: "High-speed street racing across neon-lit city circuits. Master drift mechanics to dominate leaderboards worldwide.",
+    desc: "Rush to Race is a free offline hill climb racing game built for players who want a real offroad driving challenge, not just speed.. Tackle steep hill climbs, pull off mid-air stunts, and outrun rival racers — all without using a single megabyte of mobile data. Enjoy pure arcade fun anytime, anywhere — no Wi-Fi needed!",
     gradient: "linear-gradient(135deg, #1a0533 0%, #2d1052 50%, #0d1a3d 100%)",
     iconColor: "#A78BFA",
-    store: "#",
-    trailer: "#",
+    store: "https://play.google.com/store/apps/details?id=com.indvalkaya.rushToRace",
+    trailer: "https://www.youtube.com/watch?v=7OCGT1_JPwk&t=3s",
   },
 ];
 
