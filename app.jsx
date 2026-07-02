@@ -633,18 +633,22 @@ function ContactPage() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    setLoading(true);
-    // Simulate async send — replace with your real endpoint / EmailJS / Formspree
-    // setTimeout(() => { setLoading(false); setSubmitted(true); }, 1200);
+  const handleSubmit = async e => {
+  e.preventDefault();
+  setLoading(true);
+  try {
     const res = await fetch('https://formspree.io/f/xpqgyeyn', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-  body: JSON.stringify(form),
-});
-if (res.ok) setSubmitted(true);
-  };
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(form),
+    });
+    if (res.ok) setSubmitted(true);
+  } catch (err) {
+    console.error('Form submission failed:', err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <main className="page">
