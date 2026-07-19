@@ -57,24 +57,13 @@ const CSS = `
   display: flex; align-items: center; gap: 10px;
   text-decoration: none; overflow: hidden; white-space: nowrap;
 }
-.logo-mark {
-  width: 32px; height: 32px; flex-shrink: 0;
-  background: var(--accent);
-  border-radius: 8px;
-  display: grid; place-items: center;
-  font-family: 'Orbitron', monospace;
-  font-size: 13px; font-weight: 900;
-  color: #fff; letter-spacing: -1px;
+.logo-img {
+  height: 40px; width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: opacity var(--transition);
 }
-.logo-text {
-  font-family: 'Orbitron', monospace;
-  font-size: 11px; font-weight: 700;
-  color: var(--text);
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-.logo-text span { display: block; color: var(--lavender); font-weight: 400; }
+.sidebar.collapsed .logo-img { opacity: 0; width: 0; }
 
 .toggle-btn {
   background: none; border: none; cursor: pointer;
@@ -787,10 +776,11 @@ function App() {
       >
         <div className="sidebar-header">
           <a className="sidebar-logo" href="#about" onClick={e => { e.preventDefault(); navigate('about'); }}>
-            <div className="logo-mark">VS</div>
-            <div className="logo-text">
-              Valkaya<span>Studio</span>
-            </div>
+            <img
+              src="./images/logo.png"
+              alt="Valkaya Studio"
+              className="logo-img"
+            />
           </a>
           {/* Desktop collapse toggle */}
           {!isMobile && (
