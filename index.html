@@ -12,8 +12,6 @@
 
     <!-- Open Graph -->
     <meta property="og:image" content="./images/logo.png" />
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Valkaya Studio" />
     <meta property="og:description" content="Independent mobile game developers crafting immersive experiences." />
     <meta property="og:type" content="website" />
@@ -25,70 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --bg: #0D0F1A;
-            --panel: #161929;
-            --panel2: #1E2235;
-            --accent: #7C3AED;
-            --accent-glow: #9F67FF;
-            --accent-dim: #3D1F7A;
-            --lavender: #C4B5FD;
-            --text: #F0F0FF;
-            --text-muted: #8B90A8;
-            --border: #2A2D3E;
-            --sidebar-w: 220px;
-            --sidebar-collapsed: 64px;
-            --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        #root {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* ── Scrollbar ── */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-dim);
-            border-radius: 3px;
-        }
-
-        /* ── Reduced motion ── */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                transition-duration: 0.01ms !important;
-                animation-duration: 0.01ms !important;
-            }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
   <div id="root"></div>
@@ -97,6 +33,11 @@
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel" src="app.jsx"></script>
+
+  <!-- App scripts (order matters: each relies on globals defined before it) -->
+  <script type="text/babel" src="./js/icons.jsx"></script>
+  <script type="text/babel" src="./js/data.jsx"></script>
+  <script type="text/babel" src="./js/pages.jsx"></script>
+  <script type="text/babel" src="./js/app.jsx"></script>
 </body>
 </html>
