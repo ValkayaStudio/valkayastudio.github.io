@@ -341,15 +341,22 @@ body {
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.2);
 }
 .game-thumb {
-  width: 100%; aspect-ratio: 16/9;
+  width: calc(100% - 24px);
+  margin: 12px 12px 0;
+  aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  transition: border-color 0.25s;
 }
+.game-card:hover .game-thumb { border-color: var(--accent-dim); }
 .game-thumb-icon { position: relative; z-index: 1; opacity: 0.9; }
 .game-thumb-icon img {
   display: block;
   width: 64px; height: 64px;
   object-fit: contain;
+  border-radius: 14px;
   image-rendering: -webkit-optimize-contrast;
 }
 .game-body { padding: 20px; }
