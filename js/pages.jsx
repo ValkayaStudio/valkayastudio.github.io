@@ -253,3 +253,115 @@ function ContactPage() {
     </main>
   );
 }
+
+// ─────────────────────────────────────────────
+// PRIVACY POLICY PAGE
+// ─────────────────────────────────────────────
+const PRIVACY_GAMES = [
+    {
+        id: "rush-to-race",
+        name: "Rush to Race : Hill Racing",
+    },
+    {
+        id: "race-riot",
+        name: "Race Riot : Car Crash",
+    },
+];
+
+function PrivacyPolicyPage({ subpage }) {
+    if (subpage) {
+        const game = PRIVACY_GAMES.find(g => g.id === subpage);
+        if (!game) {
+            return (
+                <main className="page">
+                    <h1>Privacy Policy</h1>
+                    <p>Game not found.</p>
+                    <a href="#privacy">Back to Privacy Policy</a>
+                </main>
+            );
+        }
+        return (
+            <main className="page">
+                <h1>{game.name} Privacy Policy</h1>
+                <p>
+                    This privacy policy describes how we collect, use, and share information when you use <strong>{game.name}</strong>.
+                </p>
+                <h2>Information We Collect</h2>
+                <ul>
+                    <li>
+                        <strong>Device Information:</strong> We may collect information about your device, such as device type, operating system, and unique device identifiers.
+                    </li>
+                    <li>
+                        <strong>Usage Data:</strong> We collect data about your interactions with the game, such as gameplay events, session length, and in-game actions.
+                    </li>
+                    <li>
+                        <strong>Advertising Data:</strong> We may collect and share your device's advertising identifier with ad networks to display relevant ads.
+                    </li>
+                </ul>
+                <h2>How We Use Information</h2>
+                <ul>
+                    <li>To provide and improve the game experience.</li>
+                    <li>To analyze usage and performance through analytics services.</li>
+                    <li>To serve ads and measure their effectiveness.</li>
+                </ul>
+                <h2>Third-Party Services</h2>
+                <p>
+                    We use third-party services for analytics (e.g., Google Analytics for Firebase) and advertising (e.g., Google AdMob). These services may collect and use information as described in their respective privacy policies.
+                </p>
+                <h2>Data Retention</h2>
+                <p>
+                    We retain collected data as long as necessary to fulfill the purposes described in this policy. You may request deletion of your data by contacting us.
+                </p>
+                <h2>Children's Privacy</h2>
+                <p>
+                    <strong>{game.name}</strong> is intended for players of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:privacy@indvalkaya.com">privacy@indvalkaya.com</a>. We comply with all applicable child privacy laws.
+                </p>
+                <h2>Contact Us</h2>
+                <p>
+                    If you have questions or concerns about this privacy policy, please contact us at <a href="mailto:privacy@indvalkaya.com">privacy@indvalkaya.com</a>.
+                </p>
+                <a href="#privacy">Back to Privacy Policy</a>
+            </main>
+        );
+    }
+
+    return (
+        <main className="page">
+            <h1>Privacy Policy</h1>
+            <p>
+                We value your privacy. This policy explains how we collect, use, and protect your information when you use our mobile games.
+            </p>
+            <ul>
+                {PRIVACY_GAMES.map((game) => (
+                    <li key={game.id}>
+                        <a href={`#privacy/${game.id}`}>{game.name} Privacy Policy</a>
+                    </li>
+                ))}
+            </ul>
+            <h2>General Policy</h2>
+            <p>
+                Our games may collect certain information automatically, including, but not limited to, the type of mobile device you use, your device unique ID, the IP address of your mobile device, your mobile operating system, and information about the way you use the game.
+            </p>
+            <h3>Analytics</h3>
+            <p>
+                We use third-party analytics tools (such as Google Analytics for Firebase) to help us understand how our games are used. These tools collect information such as how often you use the game, the events that occur within the game, and aggregated usage data. This information is used to improve our games and provide a better experience.
+            </p>
+            <h3>Advertising</h3>
+            <p>
+                Our games may display ads provided by third-party ad networks (such as Google AdMob). These networks may use your device's advertising identifier and other information to serve personalized ads. You can opt out of personalized ads in your device settings.
+            </p>
+            <h3>Children's Privacy</h3>
+            <p>
+                Our games are designed for players of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:privacy@indvalkaya.com">privacy@indvalkaya.com</a> so we can take appropriate action. We comply with applicable laws such as the Children's Online Privacy Protection Act (COPPA).
+            </p>
+            <h3>Data Retention</h3>
+            <p>
+                We retain collected data for as long as necessary to provide our services and improve our games. You may request deletion of your data by contacting us.
+            </p>
+            <h3>Contact Us</h3>
+            <p>
+                If you have any questions about this privacy policy, please contact us at <a href="mailto:dev@indvalkaya.com">dev@indvalkaya.com</a>.
+            </p>
+        </main>
+    );
+}

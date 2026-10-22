@@ -6,7 +6,8 @@ const { useState, useEffect, useCallback } = React;
 const NAV_ITEMS = [
   { id: 'about',   label: 'About Us',   icon: icons.about,   Page: AboutPage },
   { id: 'games',   label: 'Our Games',  icon: icons.games,   Page: GamesPage },
-  { id: 'contact', label: 'Contact',    icon: icons.contact, Page: ContactPage },
+  { id: 'contact', label: 'Contact', icon: icons.contact, Page: ContactPage },
+  { id: 'privacy', label: 'Privacy Policy', icon: icons.shield, Page: PrivacyPolicyPage },
 ];
 
 // ─────────────────────────────────────────────
@@ -39,8 +40,19 @@ function App() {
     window.location.hash = id;
   }, []);
 
-  const ActivePage = NAV_ITEMS.find(n => n.id === active)?.Page || AboutPage;
-  const activeLabel = NAV_ITEMS.find(n => n.id === active)?.label || '';
+    let ActivePage = NAV_ITEMS.find(n => n.id === active)?.Page || AboutPage;
+    let activeLabel = NAV_ITEMS.find(n => n.id === active)?.label || '';
+    let subpage = null;
+
+    // Support subpages for privacy policy (e.g., #privacy/rush-to-race)
+    if (active === 'privacy') {
+        const hash = window.location.hash.replace('#', '');
+        const match = hash.match(/^privacy\/(.+)/);
+        if (match) {
+            subpage = match[1];
+        }
+    }
+
 
   return (
     <div className="layout">
@@ -118,7 +130,7 @@ function App() {
         )}
 
         {/* Page — key forces re-mount animation on nav */}
-        <ActivePage key={active} />
+        <ActivePage key={active + (subpage ? '-' + subpage : '')} subpage={subpage} />
       </div>
     </div>
   );
