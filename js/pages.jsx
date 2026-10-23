@@ -318,7 +318,7 @@ function PrivacyPolicyPage({ subpage }) {
                 </p>
                 <h2>Contact Us</h2>
                 <p>
-                    If you have questions or concerns about this privacy policy, please contact us at <a href="mailto:privacy@indvalkaya.com">privacy@indvalkaya.com</a>.
+                    If you have questions or concerns about this privacy policy, please contact us at <a href="mailto:dev@indvalkaya.com">dev@indvalkaya.com</a>.
                 </p>
                 <a href="#privacy">Back to Privacy Policy</a>
             </main>
@@ -352,7 +352,7 @@ function PrivacyPolicyPage({ subpage }) {
             </p>
             <h3>Children's Privacy</h3>
             <p>
-                Our games are designed for players of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:privacy@indvalkaya.com">privacy@indvalkaya.com</a> so we can take appropriate action. We comply with applicable laws such as the Children's Online Privacy Protection Act (COPPA).
+                Our games are designed for players of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:dev@indvalkaya.com">dev@indvalkaya.com</a> so we can take appropriate action. We comply with applicable laws such as the Children's Online Privacy Protection Act (COPPA).
             </p>
             <h3>Data Retention</h3>
             <p>
