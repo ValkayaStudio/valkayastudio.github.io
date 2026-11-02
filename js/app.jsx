@@ -8,6 +8,7 @@ const NAV_ITEMS = [
     { id: 'games', label: 'Our Games', icon: icons.games, Page: GamesPage },
     { id: 'contact', label: 'Contact', icon: icons.contact, Page: ContactPage },
     { id: 'privacy', label: 'Privacy Policy', icon: icons.shield, Page: PrivacyPolicyPage },
+    { id: 'terms', label: 'Terms of Service', icon: icons.terms, Page: TermsOfServicePage },
 ];
 
 // ─────────────────────────────────────────────

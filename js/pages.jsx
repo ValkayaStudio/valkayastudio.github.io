@@ -551,3 +551,143 @@ function PrivacyPolicyPage({ subpage }) {
         </main>
     );
 }
+
+// ─────────────────────────────────────────────
+// TERMS OF SERVICE PAGE
+// ─────────────────────────────────────────────
+const TERMS_COMPANY = "Valkaya Studio";
+const TERMS_EMAIL = "dev@indvalkayastudios.com";
+const TERMS_LAST_UPDATED = "October 23, 2026";
+const TERMS_GAMES = PRIVACY_GAMES;
+
+function TermsOfServiceBody({ game }) {
+    const subject = game ? <strong>{game.name}</strong> : "our mobile games";
+    const contact = <a href={`mailto:${TERMS_EMAIL}`}>{TERMS_EMAIL}</a>;
+
+    return (
+        <>
+            <p><em>Last updated: {TERMS_LAST_UPDATED}</em></p>
+
+            <h2>Acceptance of Terms</h2>
+            <p>
+                These Terms of Service ("Terms") apply when you install, access, or play {subject} provided by {TERMS_COMPANY}
+                ("we", "us", "our"). By using the game, you agree to these Terms.
+            </p>
+
+            <h2>Eligibility</h2>
+            <p>
+                Our games are intended for players of all ages. If you are under the age required in your country to agree to
+                legal terms, your parent or guardian must review and agree to these Terms on your behalf.
+            </p>
+
+            <h2>License and Use</h2>
+            <p>
+                We grant you a limited, non-exclusive, non-transferable, revocable license to use the game for personal,
+                non-commercial entertainment. You may not copy, modify, distribute, reverse engineer, or exploit the game
+                except as allowed by law.
+            </p>
+
+            <h2>Gameplay, Availability, and Updates</h2>
+            <p>
+                We may update, improve, suspend, or discontinue features of the game at any time. We do not guarantee that the
+                game will always be available, error-free, or compatible with every device.
+            </p>
+
+            <h2>Ads and Analytics</h2>
+            <p>
+                The game may use advertising and analytics services to support operation, measure performance, and improve
+                gameplay. These services may process device and usage data as explained in our Privacy Policy.
+            </p>
+
+            <h2>Player Conduct</h2>
+            <p>You agree not to use the game to:</p>
+            <ul>
+                <li>Cheat, exploit bugs, or use unauthorized tools to gain unfair advantages.</li>
+                <li>Interfere with game systems, servers, or other players.</li>
+                <li>Use the game for unlawful, abusive, or harmful activity.</li>
+            </ul>
+
+            <h2>Intellectual Property</h2>
+            <p>
+                All content in the game, including code, visuals, audio, logos, and trademarks, is owned by {TERMS_COMPANY}
+                or its licensors and is protected by applicable intellectual property laws.
+            </p>
+
+            <h2>Third-Party Services</h2>
+            <p>
+                The game may include third-party technologies and links (such as app stores, ad services, and analytics
+                providers). Their services are governed by their own terms and privacy policies.
+            </p>
+
+            <h2>Disclaimers</h2>
+            <p>
+                The game is provided on an "as is" and "as available" basis to the fullest extent permitted by law, without
+                warranties of any kind, express or implied.
+            </p>
+
+            <h2>Limitation of Liability</h2>
+            <p>
+                To the maximum extent permitted by law, {TERMS_COMPANY} will not be liable for indirect, incidental, special,
+                consequential, or punitive damages, or for loss of data, profits, or business arising from your use of the
+                game.
+            </p>
+
+            <h2>Termination</h2>
+            <p>
+                We may suspend or terminate access to the game if these Terms are violated or if required for security,
+                operational, or legal reasons.
+            </p>
+
+            <h2>Changes to These Terms</h2>
+            <p>
+                We may update these Terms from time to time. Updated Terms become effective when posted, and the "Last updated"
+                date will be revised.
+            </p>
+
+            <h2>Contact</h2>
+            <p>
+                Questions about these Terms can be sent to {contact}.
+            </p>
+        </>
+    );
+}
+
+function TermsOfServicePage({ subpage }) {
+    if (subpage) {
+        const game = TERMS_GAMES.find(g => g.id === subpage);
+        if (!game) {
+            return (
+                <main className="page">
+                    <h1>Terms of Service</h1>
+                    <p>Game not found.</p>
+                    <a href="#terms">Back to Terms of Service</a>
+                </main>
+            );
+        }
+
+        return (
+            <main className="page">
+                <h1>{game.name} Terms of Service</h1>
+                <TermsOfServiceBody game={game} />
+                <a href="#terms">Back to Terms of Service</a>
+            </main>
+        );
+    }
+
+    return (
+        <main className="page">
+            <h1>Terms of Service</h1>
+            <p>
+                These Terms explain the rules for using our games. For game-specific terms, choose one below:
+            </p>
+            <ul>
+                {TERMS_GAMES.map((game) => (
+                    <li key={game.id}>
+                        <a href={`#terms/${game.id}`}>{game.name} Terms of Service</a>
+                    </li>
+                ))}
+            </ul>
+            <TermsOfServiceBody />
+        </main>
+    );
+}
