@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303917084328",
+    "project_id": "rush-to-race-dev",
+    "storage_bucket": "rush-to-race-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303917084328:android:e8de16b78316c2deef5c9d",
+        "android_client_info": {
+          "package_name": "com.indvalkaya.rushToRace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw9BKfn6DeAgWVllioMdlhYOxU__ZXAg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
