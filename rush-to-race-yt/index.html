@@ -5,14 +5,10 @@
     <!-- Load the YouTube Playables SDK first -->
     <script src="https://www.youtube.com/game_api/v1"></script>
 </head>
-<body>
-    <!-- Load your game scripts after the SDK -->
-    <script src="Build/rush-to-race-yt.loader.js"></script>
-</body>
 </html>
 
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Rush to Race</title>
@@ -71,9 +67,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/rush-to-race-yt.loader.js";
       var config = {
-        dataUrl: buildUrl + "/rush-to-race-yt.data",
-        frameworkUrl: buildUrl + "/rush-to-race-yt.framework.js",
-        codeUrl: buildUrl + "/rush-to-race-yt.wasm",
+        dataUrl: buildUrl + "/rush-to-race-yt.data.unityweb",
+        frameworkUrl: buildUrl + "/rush-to-race-yt.framework.js.unityweb",
+        codeUrl: buildUrl + "/rush-to-race-yt.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Indvalkaya Studio",
         productName: "Rush to Race",
@@ -126,7 +122,7 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+              }).then((unityInstance) => {
                 window.unityGameInstance = unityInstance;   // <-- add this line
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
